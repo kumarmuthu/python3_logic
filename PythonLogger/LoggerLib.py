@@ -5,7 +5,7 @@ import logging.config
 __version__ = "2019.10.20.01"
 __author__ = "Muthukumar Subramanian"
 
-# You can refer this link also
+# You can refer to this link also
 # https://stackoverflow.com/questions/6386698/how-to-write-to-a-file-using-the-logging-python-module
 
 
@@ -13,8 +13,8 @@ class LoggerLib(object):
     def __init__(self):
         pass
 
-    def Logger(self, file_name):
-        '''
+    def logger_func(self, file_name):
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -22,11 +22,11 @@ class LoggerLib(object):
             Optional argument(s):
                 None
         :return:
-        '''
+        """
         formatter = logging.Formatter(fmt='%(asctime)s %(module)s,line: %(lineno)d %(levelname)8s | %(message)s',
                                       datefmt='%Y/%m/%d %H:%M:%S')  # %I:%M:%S %p AM|PM format
-        # we can use .txt or .log file extension
-        logging.basicConfig(filename='%s.txt' % (file_name),
+        # We can use .txt or .log file extension
+        logging.basicConfig(filename='%s.log' % (file_name),
                             format='%(asctime)s %(module)s,line: %(lineno)d %(levelname)8s | %(message)s',
                             datefmt='%Y/%m/%d %H:%M:%S', filemode='w', level=logging.DEBUG)
         log_obj = logging.getLogger()
